@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from 'react'
+import './App.css'
+import {ReposList} from './components/ReposList/ReposList'
+import axios from 'axios'
+import {IRepos, ServerRespons} from './types/types'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [repos, setRepos] = useState<any>([])
+	const [loading, setLoading] = useState(false)
+
+	useEffect(() => {
+		const url =
+			'https://api.github.com/search/repositories?q=language:typescript&sort=stars&order=desc'
+		axios.get(url).then((resp) => {
+			const allRepos = resp.data.items
+			setRepos(allRepos)
+			setLoading(false)
+		})
+	}, [setRepos])
+	
+	
+	return (
+		<>
+			<ReposList
+				repos={repos}
+				loading={loading}
+			/>
+		</>
+	)
 }
 
-export default App;
+export default App
