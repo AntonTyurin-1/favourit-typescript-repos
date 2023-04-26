@@ -13,13 +13,14 @@ export const ReposCard = ({rep}: any) => {
 				/>
 			</div>
 
-			<div>
+			<div className='card_info'>
 				<h2 className='card__name'> {rep.name}</h2>
-				<p className='card__info'>
-					Forks: <span className=''>{rep.forks}</span>
-					Watchers: <span className=''>{rep.watchers}</span>
+				<p className='card__text'>
+					<span>Language: {rep.language}</span>
+					<span className=''>Forks: {rep.forks}</span>
+					<span className=''>Watchers: {rep.watchers}</span>
 				</p>
-				<p className='card__description'> {rep.description}</p>
+				<p className='card__description'> <span>Description: {rep.description}</span></p>
 			</div>
 		</div>
 	)
