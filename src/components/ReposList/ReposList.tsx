@@ -1,7 +1,7 @@
 import React, {FC} from 'react'
 import {ReposCard} from '../ReposCard/ReposCard'
-import './ReposList.css'
-import {IRepos} from '../../types/types'
+import './ReposList.scss'
+
 import {Loader} from '../Loader/Loader'
 export const ReposList = ({repos, loading}: any) => {
 	return (
@@ -9,7 +9,12 @@ export const ReposList = ({repos, loading}: any) => {
 			{loading ? (
 				<Loader />
 			) : (
-				repos.map((rep: any) => <ReposCard key={rep.id} rep= {rep}/>)
+				repos.map((rep: any) => (
+					<ReposCard
+						key={rep.id}
+						rep={rep}
+					/>
+				))
 			)}
 		</div>
 	)

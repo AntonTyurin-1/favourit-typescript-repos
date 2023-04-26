@@ -1,0 +1,12 @@
+.footer {
+	height: 50px;
+	background-color: rgb(158, 158, 158);
+	color: white;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	& span {
+		font-size: 1em;
+		margin-right: 3em;
+	}
+}

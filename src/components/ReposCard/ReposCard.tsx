@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 import {IOwner, IRepos} from '../../types/types'
-import './ReposCard.css'
+import './ReposCard.scss'
 export const ReposCard = ({rep}: any) => {
 	console.log(rep)
 
