@@ -1,9 +1,9 @@
 import React from 'react'
-
+import './style.css'
 export const Loader = () => {
 	return (
-		<div className='loader'>
-			<h3>Loading...</h3>
+		<div className='wrapper'>
+			<div className='loader'></div>
 		</div>
 	)
 }
