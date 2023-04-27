@@ -6,7 +6,7 @@ import axios from 'axios'
 import './style.css'
 export const List: FC = () => {
 	const [data, setData] = useState<IRepository[]>([])
-	const [loading, setLoading] = useState(false)
+	const [loading, setLoading] = useState<boolean>(false)
 	const getData = async () => {
 		setLoading(true)
 		try {
@@ -47,7 +47,7 @@ export const List: FC = () => {
 
 			<footer className='footer'>
 				<div className='footer__content'>
-					<span>created by @AntTyurin</span>
+					<a href='https://t.me/AntTyurin' target='_blank' rel="noreferrer"><span>created by @AntTyurin</span></a>
 				</div>
 			</footer>
 		</div>

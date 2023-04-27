@@ -5,8 +5,6 @@ type Props = {
 	data: IRepository
 }
 export const Card: FC<Props> = ({data}) => {
-	console.log(data)
-
 	return (
 		<div className='card'>
 			<div className='card__img'>
